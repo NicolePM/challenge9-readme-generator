@@ -2,19 +2,19 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   let licenseString = ""
-  if (licenseType === "MIT") {
+  if (license === "MIT") {
     licenseString = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
   };
-  if (licenseType === "GNU") {
+  if (license === "GNU") {
     licenseString = `![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)`
   };
-   if (licenseType === "Apache") {
+   if (license === "Apache") {
      licenseString = `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
   };
-  if (licenseType === "BSD") {
+  if (license === "BSD") {
       licenseString ='[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)'
      };
-  if(licenseType === "None"){
+  if(license === "None"){
     licenseString='No License selected'
   }
   return licenseString
@@ -26,7 +26,7 @@ function generateMarkdown(data) {
   return `# ${data.title}
 
   ## Table of Contents:
-  1. [Title](#title)
+  * [Title](#title)
   2. [Description](#description) 
   2. [Installation](#Installation)
   3. [Website](#website)
@@ -65,7 +65,7 @@ ${data.badge}
  ## E-mail
  ${data.email}
  ## Tests
- ${data.tests}`
- }
+ ${data.tests}
+ `}
    module.exports = generateMarkdown;
  
